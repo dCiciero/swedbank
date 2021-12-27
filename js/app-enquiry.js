@@ -76,10 +76,10 @@ function clearError() {
 function getDetails(info) {
   let details = reviews[info];
   if (details.id == 1){
-    details.fname = fname.value; // "fname.textContent"
-    details.lname = lname.value //textContent
-    details.email = email.value  //textContent
-    details.addy = address.value   //textContent
+    details.fname = fname.value;
+    details.lname = lname.value 
+    details.email = email.value  
+    details.addy = address.value   
   }
   else if (details.id == 2){
     details.employed = document.querySelector('.emp-form-check-input:checked').value
@@ -104,16 +104,12 @@ function validateInput() {
 }
 // show next Q
 nextBtn.addEventListener("click", function () {
-  
-  // console.log(fname.textContent);
-  
   switch (currentDetails) {
     case 0:
       console.log(fname.value);
       if (!validateInput()){
         return
       }
-      // clearError();
       biodata.style.display = "None";
       empdetails.style.display = "block";
       currentDetails++;
@@ -143,22 +139,15 @@ nextBtn.addEventListener("click", function () {
       break;
   }
   console.log(reviews[currentDetails].question);
-  // currentDetails++;
   if (currentDetails > reviews.length - 1) {
     currentDetails = 0;
   }
-  // console.log(details);
-  // if 
 
 });
 // show prev Q
 prevBtn.addEventListener("click", function () {
   
   switch (currentDetails) {
-    // case 0:
-    //   prevBtn.setAttribute('disabled', 'disabled')
-    //   question.textContent = reviews[currentDetails].question;  
-    //   break;
     case 1: 
       biodata.style.display = "block";
       empdetails.style.display = "none";
@@ -186,12 +175,9 @@ prevBtn.addEventListener("click", function () {
   if (currentDetails < 0) {
     currentDetails = reviews.length - 1;
   }
-  // details = getDetails(currentDetails);
 
 });
 if (summaryBtn){
-  // console.log(summaryBtn.textContent);
-  
   summaryBtn.addEventListener("click", function () {
     if (summaryBtn.textContent.toLowerCase() == "summary"){
       summaryBtn.textContent = "Close Summary"
